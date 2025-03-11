@@ -3,7 +3,6 @@ package main
 import (
 	"bytes"
 	"encoding/json"
-	// "time"
 
 	// "fmt"
 	"io/ioutil"
@@ -107,28 +106,6 @@ func enviarCitaAPI2(cita Cita) {
 	body, _ := ioutil.ReadAll(resp.Body)
 	log.Printf("📤 Respuesta de API 2: %s", string(body))
 }
-
-// func enviarCitaAPI2(cita Cita) {
-// 	// Convertir la fecha a formato RFC3339
-// 	cita.AppointmentDate = cita.AppointmentDate.UTC()
-
-// 	url := "http://localhost:8081/notificaciones"
-
-// 	citaJSON, err := json.Marshal(cita)
-// 	if err != nil {
-// 		log.Printf("❌ Error al convertir la cita a JSON: %s", err)
-// 		return
-// 	}
-
-// 	resp, err := http.Post(url, "application/json", bytes.NewBuffer(citaJSON))
-// 	if err != nil {
-// 		log.Printf("❌ Error al enviar la cita a API 2: %s", err)
-// 		return
-// 	}
-// 	defer resp.Body.Close()
-
-// 	log.Printf("📤 Respuesta de API 2: %s", resp.Status)
-// }
 
 func main() {
 	consumirCitas()
